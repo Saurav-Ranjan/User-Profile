@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    background-color: #f7f7f7; 
+    border: 1px solid #000000; 
+    color: #000000; 
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .menu {
+    display: flex;
+   
+
+    a {
+      padding: 10px 15px;
+      
+
+    }
+
+}
+  .profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF; 
+  }
+ 
+
+  .blue {
+    background-color: #0275d8;
+}
+
+.red {
+    background-color: #f7f7f7;
+}

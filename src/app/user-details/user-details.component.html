@@ -1,0 +1,36 @@
+   <div class="container mt-4">
+    <h2>Registered User</h2>
+    <table class="table table-bordered">
+      <thead> 
+        <tr>
+            <th class="text-center" colspan="4">User Details</th>
+          </tr>
+        <tr>
+          <th class="text-center">User Name</th>
+          <th class="text-center">Email</th>
+          <th class="text-center"> Address</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let user of userData; let i = index">
+          <td>{{user.userName}} </td>
+          <td>{{user.email}}</td>
+          <td>
+            <ul class="custom-list">
+              <li *ngFor="let address of user.addresses"> 
+                <strong>City:</strong>{{ address.city }},<br/><br/>
+                <strong>State:</strong> {{ address.state }},<br/><br/>
+                <strong>Pin Code:</strong>{{ address.pinCode }}<br/><br/>
+              </li>
+            </ul>
+          </td>
+          <td>
+            <i class="material-icons" style="-webkit-text-fill-color:red" (click)="deleteUser(i)">close</i>
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

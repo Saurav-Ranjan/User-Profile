@@ -1,0 +1,85 @@
+
+   <div class="col-10 mt-4 mx-5">
+
+    <form [formGroup]="regForm" (ngSubmit)="submitData()">
+
+        <div class="row mx-0">
+          <h1 class="custom-title">Sign In</h1>
+            <div class="col-12 col-lg-5">
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" class="form-control" id="userName" formControlName="userName"
+                        aria-describedby="userName" placeholder="Enter User Name">
+                  
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-5">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text"  formControlName="email"
+                         class="form-control" id="email"  aria-describedby="email"
+                        placeholder="Enter Email">
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="row mx-0">
+            <div class="col-12 mt-5" formArrayName="addresses">
+                <div class="d-flex flex-wrap justify-content-between">
+                  <h1 class=" mr-3 custom-title">Address Details</h1>
+                    
+                    <div>
+                        <button type="button" [disabled]="!addresses.valid" class="btn btn-primary"
+                            (click)="addAddress()">+ Add Address</button>
+                    </div>
+                </div>
+                <hr class="pb-4 mb-1" />
+                <div class="row address-section" *ngFor="let addressDetails of addresses.controls;let i=index">
+                  <h4 class="mr-3 mt-3">Address{{i+1}}</h4>
+                    <div class="col-12 px-0" [formGroupName]="i">
+                        <div class="row mx-0">
+                            <div class="col-12 col-lg-3">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city"
+                                        formControlName="city" aria-describedby="city"
+                                        placeholder="Enter City">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" id="state" formControlName="state"
+                                        aria-describedby="state" placeholder="Enter State">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <div class="form-group">
+                                    <label for="pinCode">Pin Code</label>
+                                    <input type="text" class="form-control" id="pinCode"
+                                        formControlName="pinCode" aria-describedby="pinCode"
+                                        placeholder="Enter Pin Code ">
+                                          </div>
+                            </div>
+                         
+                            <div class="col-12 col-lg-1 d-flex align-items-center">
+
+                              <button *ngIf="i > 0" type="button"  class="btn btn-primary"
+                              (click)="deleteAddress(i)">Delete Address</button>
+                              
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-12 px-0 mb-4 text-center">
+                    <button type="submit" [disabled]="regForm.invalid" class="btn btn-success mr-3">Register User</button>
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+<header class="header">
+    <div class="logo">Logo</div>
+    <div class="menu">
+      <button type="button" routerLink="/registration" (click)="enableDisableRule()" 
+      [ngClass]="{'blue' : toggle, 'white': !toggle}" class="btn">Registration</button>
+      <button type="button" routerLink="/user-details" (click)="enableDisableRule()" 
+      [ngClass]="{'blue' : !toggle, 'white': toggle}" class="btn ">User Details</button>
+    </div> 
+    <div class="profile">
+      <img src="../../assets/3135715.png" alt="Profile Image" />
+    </div>
+  </header>
+  
