@@ -12,7 +12,9 @@
           <th class="text-center">Actions</th>
         </tr>
       </thead>
+      
       <tbody>
+        <ng-container *ngIf="userData.length > 0; else noUsersFound"></ng-container>
         <tr  *ngFor="let user of userData; let i = index">
           <td>{{user.userName}} </td>
           <td>{{user.email}}</td>
@@ -32,5 +34,10 @@
         </tr>
       </tbody>
     </table>
+    <ng-template  #noUsersFound>
+      <tr>
+        <td colspan="4" class="no-users">No users found.</td>
+      </tr>
+    </ng-template>
   </div>
   
